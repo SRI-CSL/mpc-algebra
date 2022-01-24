@@ -1,6 +1,6 @@
 use derivative::Derivative;
 use log::debug;
-use rand::Rng;
+use ark_std::rand::Rng;
 use zeroize::Zeroize;
 
 use ark_ff::bytes::{FromBytes, ToBytes};
