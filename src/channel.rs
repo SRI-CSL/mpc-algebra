@@ -1,6 +1,6 @@
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use digest::Digest;
-
+use rand::RngCore::ThreadRng::thread_rng;
 use ark_std::rand::RngCore;
 use sha2::Sha256;
 use std::cell::Cell;
@@ -53,7 +53,7 @@ pub trait MpcSerNet: MpcNet {
         out.serialize(&mut bytes_out).unwrap();
         let ser_len = bytes_out.len();
         bytes_out.resize(ser_len + COMMIT_RAND_BYTES, 0);
-        RngCore::thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
+        thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
         let commitment = CommitHash::new().chain(&bytes_out).finalize();
         // exchange commitments
         let all_commits = Self::broadcast_bytes(&commitment[..]);
@@ -110,7 +110,7 @@ pub fn atomic_exchange<F: CanonicalSerialize + CanonicalDeserialize>(f: &F) -> F
     f.serialize(&mut bytes_out).unwrap();
     let ser_len = bytes_out.len();
     bytes_out.resize(ser_len + COMMIT_RAND_BYTES, 0);
-    RngCore::thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
+    thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
     let commitment = CommitHash::new().chain(&bytes_out).finalize();
     // exchange commitments
     let other_commitment = net_two::exchange_bytes(&commitment[..]).unwrap();
