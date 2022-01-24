@@ -8,10 +8,10 @@ use ark_serialize::{
     CanonicalSerializeWithFlags, Flags, SerializationError,
 };
 use ark_std::io::{self, Read, Write};
-use ark_std::{end_timer, start_timer};
+use ark_std::{end_timer, start_timer, rand::Rng};
 use core::ops::*;
 use derivative::Derivative;
-use rand::Rng;
+
 use std::cmp::Ord;
 use std::default::Default;
 use std::fmt::{self, Debug, Display, Formatter};
