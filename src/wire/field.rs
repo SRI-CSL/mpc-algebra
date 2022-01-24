@@ -565,21 +565,21 @@ mod poly_impl {
         fn reveal(self) -> Self::Base {
             Evaluations::from_vec_and_domain(
                 self.evals.reveal(),
-                GeneralEvaluationDomain::new(self.domain.size()).unwrap(),
+                GeneralEvaluationDomain::new(self.domain().size()).unwrap(),
             )
         }
 
         fn from_add_shared(b: Self::Base) -> Self {
             Evaluations::from_vec_and_domain(
                 Reveal::from_add_shared(b.evals),
-                GeneralEvaluationDomain::new(b.domain.size()).unwrap(),
+                GeneralEvaluationDomain::new(b.domain().size()).unwrap(),
             )
         }
 
         fn from_public(b: Self::Base) -> Self {
             Evaluations::from_vec_and_domain(
                 Reveal::from_public(b.evals),
-                GeneralEvaluationDomain::new(b.domain.size()).unwrap(),
+                GeneralEvaluationDomain::new(b.domain().size()).unwrap(),
             )
         }
     }
