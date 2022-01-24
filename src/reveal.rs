@@ -1,6 +1,6 @@
 #![macro_use]
 use ark_std::{collections::BTreeMap, marker::PhantomData, rc::Rc};
-use rand::Rng;
+use ark_std::rand::Rng;
 
 /// A type should implement [Reveal] if it represents the MPC abstraction of some base type.
 ///

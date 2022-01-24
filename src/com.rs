@@ -1,5 +1,5 @@
 use digest::Digest;
-use rand::Rng;
+use ark_std::rand::Rng;
 use sha2;
 
 use ark_ff::prelude::*;

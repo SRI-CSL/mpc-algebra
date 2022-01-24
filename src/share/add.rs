@@ -1,6 +1,6 @@
 #![macro_use]
 use derivative::Derivative;
-use rand::Rng;
+use ark_std::rand::Rng;
 
 use ark_ec::group::Group;
 use ark_ec::{PairingEngine, ProjectiveCurve};

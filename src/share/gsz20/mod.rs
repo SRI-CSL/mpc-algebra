@@ -49,7 +49,7 @@ use std::sync::Mutex;
 use derivative::Derivative;
 use lazy_static::lazy_static;
 use log::debug;
-use rand::Rng;
+use ark_std::rand::Rng;
 
 use super::field::{
     DenseOrSparsePolynomial, DensePolynomial, ExtFieldShare, FieldShare, SparsePolynomial,

@@ -7,7 +7,7 @@ use ark_serialize::{
 };
 use ark_std::io::{self, Read, Write};
 use core::ops::*;
-use rand::Rng;
+use ark_std::rand::Rng;
 use std::cmp::Ord;
 use std::default::Default;
 use std::fmt::{self, Debug, Display, Formatter};
