@@ -52,7 +52,7 @@ pub trait MpcSerNet: MpcNet {
         out.serialize(&mut bytes_out).unwrap();
         let ser_len = bytes_out.len();
         bytes_out.resize(ser_len + COMMIT_RAND_BYTES, 0);
-        rand::thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
+        ark_std::rand::thread_rng().fill_bytes(&mut bytes_out[ser_len..]);
         let commitment = CommitHash::new().chain(&bytes_out).finalize();
         // exchange commitments
         let all_commits = Self::broadcast_bytes(&commitment[..]);
