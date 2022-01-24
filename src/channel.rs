@@ -1,6 +1,6 @@
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use digest::Digest;
-use rand::RngCore::ThreadRng::thread_rng;
+use rand::thread_rng;
 use ark_std::rand::RngCore;
 use sha2::Sha256;
 use std::cell::Cell;
