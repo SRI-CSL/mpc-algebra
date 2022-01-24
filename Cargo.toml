@@ -26,8 +26,8 @@ rand = { version = "0.7", default-features = false, features = ["std"] }
 rand_chacha = { version = "0.3", default-features = false }
 rayon = { version = "1.0.0", optional = true }
 zeroize = { version = "1", default-features = false, features = ["zeroize_derive"] }
-mpc-net = { path = "../mpc-net" }
-mpc-trait = { path = "../mpc-trait" }
+mpc-net = { git = "https://github.com/SRI-CSL/mpc-trait" }
+mpc-trait = { git =  "https://github.com/SRI-CSL/mpc-trait" }
 
 env_logger = "0.8"
 structopt = "0.3"
