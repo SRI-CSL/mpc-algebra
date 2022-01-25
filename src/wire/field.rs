@@ -570,7 +570,7 @@ mod poly_impl {
         }
 
         fn from_add_shared(b: Self::Base) -> Self {
-            Evaluations::from_vec_and_dnomain(
+            Evaluations::from_vec_and_domain(
                 Reveal::from_add_shared(b.evals),
                 GeneralEvaluationDomain::new(b.domain.size()).unwrap(),
             )
