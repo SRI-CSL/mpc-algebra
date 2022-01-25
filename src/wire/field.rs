@@ -570,7 +570,7 @@ mod poly_impl {
         }
 
         fn from_add_shared(b: Self::Base) -> Self {
-            Evaluations::from_vec_and_domain(
+            Evaluations::from_vec_and_dnomain(
                 Reveal::from_add_shared(b.evals),
                 GeneralEvaluationDomain::new(b.domain.size()).unwrap(),
             )
@@ -579,7 +579,7 @@ mod poly_impl {
         fn from_public(b: Self::Base) -> Self {
             Evaluations::from_vec_and_domain(
                 Reveal::from_public(b.evals),
-                GeneralEvaluationDomain::new(b.domain().size()).unwrap(),
+                GeneralEvaluationDomain::new(b.domain.size()).unwrap(),
             )
         }
     }
