@@ -8,7 +8,7 @@ edition = "2018"
 ark-ff = {git = "https://github.com/SRI-CSL/algebra", default-features=false, branch = "v3_sri",features=["asm","parallel"]}
 ark-ec = {git = "https://github.com/SRI-CSL/algebra", default-features=false, branch = "v3_sri"}
 ark-poly = {git = "https://github.com/SRI-CSL/algebra", default-features=false, branch = "v3_sri"}
-ark-bls12-377 = { git = "https://github.com/SRI-CSL/curves", default-features = false, features = [ "r1cs" ], branch = "v3_sri" }
+ark-bls12-377 = { git = "https://github.com/SRI-CSL/curves", default-features = false, features = [ "curve", "r1cs" ], branch = "v3_sri" }
 ark-relations = { git = "https://github.com/SRI-CSL/snark", branch = "v3_sri", default-features = false }
 
 
